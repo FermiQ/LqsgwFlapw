@@ -1,0 +1,48 @@
+TEXT     *** band structure calculation of bcc Fe  ***                          
+CONTROL   iter_dft= 37  iter_hf=  0  iter_gw=  0 iter_qp= 30
+          admix= 0.200  adspin= 0.600 adm_gw= 0.160 acc_it_gw= 0.260
+          iexch= 005 scal_spin= 1.0000                                           
+          nproc_tau=  24 nproc_k=   2
+          irel= 1 clight= 274.074e+00 rel_interst= F irel_core= 1
+          temperature=   1000.00
+FILES                                                                           
+  allfile= fe
+SYM symgen= 'I_R3D_R4Z_'                                                           
+STRUCTURE  par=  5.4177310  natom=  1 nsort=  1  istruc=  2
+      is=  1                                                                    
+      b_a= 1.000000  c_a= 1.000000                                              
+      a=  -0.5000000000000000   0.5000000000000000   0.5000000000000000         
+      b=   0.5000000000000000  -0.5000000000000000   0.5000000000000000         
+      c=   0.5000000000000000   0.5000000000000000  -0.5000000000000000         
+    tau=   0.0000000000000000   0.0000000000000000   0.0000000000000000
+REAL SPACE MESHES mdiv=  12  12  12
+                 nrdiv=   9   9   9
+BASIS  cut_lapw_ratio= 0.610 cut_pb_ratio= 0.980
+       eps_pb= 1.e-03
+ZONES nbndf=   0
+DOS   emindos= -1.000  emaxdos=  0.600   ndos= 1000
+      n_cont_frac=  28 e_small= 2.e-03
+K_POINT  ndiv=   4   4   4  metal= T n_k_div=  1 k_line= 010 
+MULTI_SCF vv0=  1.00
+MAGNET  b_extval=   0.000000 iter_h_ext= 10000
+        b_ext=  0.000  0.000  1.000
+TAU MESH n_tau=   46 n_tau_int= 1200
+OMEGA MESH n_omega_exa=   29 n_omega_asy=   18 omega_max=  200.00
+           interp_omega_d= 2   
+NU MESH n_nu_exa=   29 n_nu_asy=   18 nu_max=  200.00
+        interp_nu_d= 2 
+ATOMIC DATE --------------------------------------------------------            
+  txtel= Fe    z= 26.0 magn_shift= 0.500
+  smt= 2.34000 h= 0.0200 nrad=  616 z_dop= 0.0000
+  lmb= 4  lmpb= 6
+  lim_pb_mt= 12 12 12 12 10 10 10                                               
+  ntle=  2  2  2  1  1  1  1  1  1                                              
+  l  augm  atocc   ptnl  corr idmd
+  0   LOC  2.000  3.950     N    0
+  0   APW  2.000  4.800     N    0
+  1   LOC  6.000  3.950     N    0
+  1   APW  0.000  4.950     N    0
+  2   APW  6.000  3.800     N    0
+  2   LOC  0.000  4.950     N    1
+  3   APW  0.000  4.950     N    0
+  4   APW  0.000  5.950     N    0

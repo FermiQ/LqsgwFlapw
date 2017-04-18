@@ -1,0 +1,390 @@
+Contents
+I.    Input file example 1
+II.   Input file description 4
+III.  Description of output files 9
+
+
+INPUT FILE EXAMPLE
+TEXT band structure calculation of Perovskite SrTiO3 
+
+CONTROL iter dft= 26 iter hf= 0 iter gw= 0 iter qp= 20
+	admix= 0.150 adspin= 0.300 adm gw= 0.200 acc it gw= 0.200
+	iexch= 005 scal spin= 1.0000
+	nproc tau= 24 nproc k= 5
+	irel= 1 clight= 274.074e+00 rel interst= F irel core= 1
+	temperature= 1000.00
+FILES
+	allfile= srtio3
+SYM symgen= 'I_R3D_R4Z_'
+STRUCTURE par= 7.3793830 natom= 5 nsort= 3 istruc= 1
+	  is= 1 2 3 3 3
+	  b_a= 1.000000 c_a= 1.000000
+     a= 1.0000000000000000 0.0000000000000000 0.0000000000000000
+     b= 0.0000000000000000 1.0000000000000000 0.0000000000000000
+     c= 0.0000000000000000 0.0000000000000000 1.0000000000000000
+     tau= 0.0000000000000000 0.0000000000000000 0.0000000000000000
+	  0.5000000000000000 0.5000000000000000 0.5000000000000000
+	  0.0000000000000000 0.5000000000000000 0.5000000000000000
+	  0.5000000000000000 0.0000000000000000 0.5000000000000000
+	  0.5000000000000000 0.5000000000000000 0.0000000000000000
+
+REAL SPACE MESHES mdiv= 18 18 18
+nrdiv= 14 14 14
+BASIS cut lapw ratio= 0.600 cut pb ratio= 0.950
+eps pb= 1.e-03
+ZONES nbndf= 0
+DOS emindos= -0.400 emaxdos= 0.400 ndos= 900
+n cont frac= 28 e small=5.e-03
+K POINT ndiv= 4 4 4 metal= F n k div= 1 k line= 001
+MULTI SCF vv0= 1.000
+MAGNET b extval= 0.000000 iter h ext= 00000
+b ext= 0.000 0.000 1.000
+TAU MESH n tau= 46 n tau int= 1000
+OMEGA MESH n omega exa= 29 n omega asy= 18 omega max= 200.00
+interp omega d= 2
+NU MESH n nu exa= 29 n nu asy= 18 nu max= 200.00
+interp nu d= 2
+ATOMIC DATA ??????????????????????????????????????????
+txtel= Sr z= 38.0 magn shift= 0.000
+smt= 3.37300 h= 0.0200 nrad= 616 z dop= 0.0000
+lmb= 6 lmpb= 6
+lim pb mt= 10 8 6 6 6 6 6
+ntle= 3 3 3 2 1 1 1 1 1
+l augm atocc ptnl corr idmd
+0 LOC 2.000 4.950 N 0
+0 APW 2.000 5.800 N 0
+0 LOC 0.000 6.950 N 1
+1 LOC 6.000 4.950 N 0
+1 APW 0.000 5.800 N 0
+1 LOC 0.000 6.950 N 1
+2 LOC 10.000 3.950 N 0
+2 APW 0.000 4.800 N 0
+2
+2 LOC 0.000 5.950 N 1
+3 APW 0.000 4.800 N 0
+3 LOC 0.000 5.950 N 1
+4 APW 0.000 5.800 N 0
+5 APW 0.000 6.800 N 0
+6 APW 0.000 7.800 N 0
+txtel= Ti z= 22.0 magn shift= 0.000
+smt= 1.84500 h= 0.0200 nrad= 616 z dop= 0.0000
+lmb= 5 lmpb= 6
+lim pb mt= 10 8 6 6 6 6 6
+ntle= 3 3 2 1 1 1 1 1 1
+l augm atocc ptnl corr idmd
+0 LOC 2.000 3.950 N 0
+0 APW 2.000 4.800 N 0
+0 LOC 0.000 5.950 N 1
+1 LOC 6.000 3.950 N 0
+1 APW 0.000 4.800 N 0
+1 LOC 0.000 5.950 N 1
+2 APW 2.000 3.800 N 0
+2 LOC 0.000 4.950 N 1
+3 APW 0.000 4.800 N 0
+4 APW 0.000 5.800 N 0
+5 APW 0.000 6.800 N 0
+txtel= O z= 8.0 magn shift= 0.000
+smt= 1.84400 h= 0.0200 nrad= 616 z dop= 0.0000
+lmb= 5 lmpb= 6
+lim pb mt= 10 8 6 6 6 6 6
+ntle= 3 2 1 1 1 1 1 1 1
+l augm atocc ptnl corr idmd
+0 LOC 2.000 2.950 N 0
+0 APW 0.000 3.800 N 0
+3
+0 LOC 0.000 4.950 N 1
+1 APW 4.000 2.500 N 0
+1 LOC 0.000 3.950 N 1
+2 APW 0.000 3.500 N 0
+3 APW 0.000 4.800 N 0
+4 APW 0.000 5.800 N 0
+5 APW 0.000 6.800 N 0
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+II. INPUT FILE DESCRIPTION
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+First line just gives some idea of what the calculation is going to produce. 
+Further on all input parameters are explained. Probably the best way to find out the one
+you need is to do search by its name.
+
+iter_dft - number of LDA iterations.
+
+iter_hf - number of Hartree-Fock iterations.
+
+iter_gw - number of GW iterations.
+
+iter_qp - number of Quasiparticle GW iterations.
+
+admix - mixing for LDA iterations (charge).
+
+adspin - mixing for LDA iterations (spin).
+
+adm_gw - initial mixing for HF, QP, GW, or GWG iterations. In all these cases self energy
+is mixed.
+
+acc_it_gw - final mixing for HF, QP, GW, or GWG iterations. Mixing is changed linearly
+from iteration to iteration from its initial value to its final.
+
+iexch - specifies the LDA parametrization for exchange-correlation energy. For details
+se the file exchcorr.f. Only LDA works presently (not GGA).
+
+nproc_tau - number of processors for (tau,omega)-parallelization. There
+are certain requirements. The following numbers: (n_tau/2+1)/nproc_tau,
+(n_omega_exa+n_omega_asy+1)/nproc_tau, and (n_nu_exa+n_nu_asy+1)/nproc_tau
+should all be integer. About the variables (n_tau, n_omega_exa, n_omega_asy,
+n_nu_exa,n_nu_asy) see below.
+
+nproc_k - number of processors for k-parallelization. Should divide exactly the number
+of irreducible points in Brillouin zone.
+
+irel - takes care of the relativistic effects:
+ = 0: nonrelativistic calculation;
+ = 1: scalar-relativistic calculation;
+ = 2: fully relativistic calculation.
+
+clight - light velocity in a.u. Can be changed if one is interested in the effect or for the
+debugging purposes.
+
+rel_interst - if =T and irel=2, then interstitial region is described fully relativistically
+(available only for LDA runs). In other situations spin-orbit effect is neglected in interstitial.
+
+irel_core - similar to the parameter irel but for core electrons only. Works for pure
+LDA runs only. In other cases should be set equal to irel.
+
+temperature - temperature in K.
+
+allfile - defines where the output goes. Different parts of the code just add their own
+specifications when perform the output, so a lot of files is formed. The description of output
+files is going to be written separately.
+
+symgen - generator of the symmetry group. Gives the minimal set of operations which
+(after all mutual multiplications) produces full set of symmetry operations. In the specific
+example above: I means spatial inversion, R4Z - four rotations around Z-axis; R3D - three
+rotations around (111)-axis (main diagonal of the cube for cubic solids).
+
+par - lattice parameter (Bohr radiuses).
+
+natom - number of atoms in the unit cell.
+
+nsort - number of inequivalent atoms.
+
+istruc - It is used mostly to specify the k-points of high symmetry. See
+k_for_band_plot.f. The conventions are the following:
+ =1 for simple cubic;
+ =2 for body-centered cubic;
+ =3 for face-centered cubic;
+ =4 for hexagonal;
+ =5 for simple tetragonal;
+ =6 for body-centered tetragonal;
+ =7 for simple orthorhombic;
+ =8 for body-centered orthorhombic;
+ =9 for face-centered orthorhombic;
+ =10 for simple monoclinic.
+
+is - specifies the correspondence between full list of atoms and the list of inequivalent
+atoms. For example for BaFe2As2 we have 5 atoms in full list (Ba, Fe, Fe, As, As) and
+3 in the list of inequivalent atoms (Ba, Fe, As). So the record in this case should be
+is= 1 2 2 3 3.
+
+b_a - first orthorhombic factor. Scales b-direction.
+
+c_a - second orthorhombic factor. Scales c-direction.
+
+a= -0.500000000000 0.500000000000 0.500000000000
+b= 0.500000000000 -0.500000000000 0.500000000000
+c= 0.500000000000 0.500000000000 -0.500000000000
+The above three lines specify vectors of primitive translations measured in lattice param-
+eter units. Orthorhombic scalings can be given here immediately or specified in b/a;c/a
+variables.
+
+tau - gives the atom coordinates in lattice parameter units. Should be repeated for all
+atoms in the unit cell. The same convention about orthorhombic scalings is applied as in
+the case of lattice translations.
+
+mdiv - defines the r-mesh in the unit cell (three numbers correspond to the number of
+divisions along three translation vectors on which the unit cell is built). This mesh is used in
+electronic density, Hartree potential, and LDA exchange-correlation potential evaluations.
+
+nrdiv - defines the r-mesh in the unit cell which is used in polarizability and self energy
+calculations.
+
+cut_lapw_ratio - defines the maximal value of k+G for LAPW basis in the interstitial
+region as cut_lapw_ratio*A, where A— maximal Radius of G-sphere associated with nrdiv.
+
+cut_pb_ratio - defines the maximal value of k + G for product basis in the interstitial
+region as cut_pb_ratio*A, where A— maximal Radius of G-sphere associated with nrdiv.
+
+eps_pb - optimization parameter in constructing the product basis inside MT spheres.
+Usual choice is 10^(-2)- 10^(-3).
+
+nbndf - defines the number of bands to be used in Green's function representation. If
+nbndf=0 then all bands available are used (in this case their number is equal to the number
+of LAPW+LO basis functions).
+
+emindos - the lowest energy for DOS plotting (relative to chemical potential, in Ry).
+
+emaxdos - the highest energy for DOS plotting (relative to chemical potential, in Ry).
+
+ndos - number of points for DOS plotting (equidistant mesh).
+
+n_cont_frac - defines the number of lowest positive Matsubara frequencies when fitting
+the continued-fractions approximation for analytical continuation.
+e_small - small positive shift when calculating retarded fermionic functions on real
+axis.(Ry)
+
+ndiv - three numbers which define the k-mesh in Brillouin zone.
+
+metal - when (metal=T) the inverse uniform dielectric constant is enforced to be exactly
+zero. If (metal=F) there is no such enforcement, which is appropriate for nonmetals. Not
+particularly important but improves stability when the number of k-points is small.
+
+n_k_div - number of divisions along every line, which connects two k-points of high
+symmetry. For bands plotting only. The option relevant only for LDA.
+
+k_line - three numbers defying the direction in reciprocal space for certain output pur-
+poses.
+
+vv0 - defines the relative volume (V/V0). V0 is given by crystal structure and lattice
+parameter above.
+
+b_extval - Absolute value of external magnetic field (Ry/mB).
+
+iter_h_ext - five digits placed together. They are used for initial spin polarization
+together with variable magn_shift (see below about the atomâ€™s description). First digit
+means how many LDA iterations are to be performed with applied field as specified by
+magn_shift for every atom in unit cell. Correspondingly the rest of the digits mean the
+same for HF, GW, or QP runs. One can start with non-spin-polarized LDA calculation but
+then switch on the polarization at, for instance, GW level (iter_h_ext=00200 if we want
+to start with two GW iteration with applied field).
+
+b_ext - three numbers, defying the direction of constant external magnetic field, associ-
+ated with variable b_extval.
+
+n_tau - number of points on TAU-mesh (inhomogeneous).
+
+n_tau_int - number of intervals on TAU-mesh to be used in TAU-Frequency transforms.
+Not very critical. 1000 is good for many purposes.
+
+n_omega_exa - number of fermionic frequencies on the dense part of the mesh.
+
+n_omega_asy - number of fermionic frequencies on the part of the mesh where we use
+Chebyshev polynomials (intermediate region).
+omega_max - max fermionic frequency (Ry), beyond which we apply asymptotic expan-
+sion.
+
+interp_omega_d - number of Matsubara frequencies to be used to find the function at
+Chebyshev point by interpolation in intermediate region.
+
+n_nu_exa - number of bosonic frequencies on the dense part of the mesh.
+
+n_nu_asy - number of bosonic frequencies on the part of the mesh where we use Chebyshev
+polynomials.
+
+nu_max - max bosonic frequency (Ry), beyond which we apply asymptotic expansion.
+
+interp_nu_d - number of Matsubara frequencies to be used to find the function at Cheby-
+shev point by interpolation in intermediate region.
+
+Now we input the information for every inequivalent atom in the unit cell.
+
+txtel - this is just symbolic representation of the atom.
+
+z - nuclear charge.
+
+magn_shift - external magnetic field (Ry/?B) for initial spin splitting. Associated with
+the variable iter_h_ext.
+
+smt - MT radius (Bohr radius).
+h - defines radial mesh inside MT sphere r(i) = S*(e^(hi)-1)/(e^(hN)-1), i = 0,N, where S-MT radius, N-
+number of points (N=nrad, see next input variable).
+
+nrad - number of points on radial mesh.
+
+z_dop - doping parameter.
+
+lmb - maximal L for LAPW basis.
+
+lmpb - maximal L for product basis.
+
+lim_pb_mt - upper limits for the number of product basis functions for specific L from 0
+to lmpb. Acts in compliance with eps_pb(see above).
+
+ntle - number of different orbitals for every L from 0 to lmb. Orbitals differ by principal
+quantum number.
+
+Now for every L and principal quantum number we input the parameters
+l, augm, atocc, ptnl, corr, idmd.
+
+l - angular momentum;
+
+augm - if (=LOC) than this orbital is local orbital. If (=APW) than it is constructed in
+accord with standard LAPW procedure.
+
+atocc - initial occupancy of the orbital.
+
+ptnl - potential parameter. P = N + 1/2 - arctan(D)/Pi, where N is the principal
+quantum number of the orbital, and D is the logarithmic derivative.
+
+corr - specifies whether the orbital is included in correlated set (=L) or not included
+(=N).
+
+idmd - defines the way we solve the radial equations:
+ IDMD = 0 - for the given energy (center of the band);
+ IDMD = 1 - for the given potential parameter ptnl (see above);
+ IDMD = 2 - Phi(Smt)=0; Phi(Smt)/=0 - bound sol-n, but not deriv;
+ IDMD = 3 - Phi(Smt)=Phi(Smt)=0 - totally bound sol-n (for deep E);
+ IDMD = 4 - for the given energy (equal to the Chemical Potential).
+
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+III. DESCRIPTION OF OUTPUT FILES
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+Besides standard output/error files which are created by the operational system and are
+useful mostly when something unexpected has happened, there are many other files with
+useful information. Below we provide the most important of them with brief description.
+The names of all of them start with the symbols provided by user in the variable allfile
+(see input file description). The rest of the name gives some hint of what is inside in most
+cases.
+
+allfile.out provides the progression of the calculation. It gives also the time consumed
+by most relevant subroutines.
+
+
+allfile_dft.dos provides the spectral function (SF) in LDA approximation. First col-
+umn in the file is real frequency (eV) measured from chemical potential, second is spin-down
+SF, third is spin-up SF, and the fourth is the full SF.
+
+allfile_qp.dos provides the spectral function (SF) in QP approximation. First column
+in the file is real frequency (eV) measured from chemical potential, second is spin-down SF,
+third is spin-up SF, and the fourth is the full SF.
+
+allfile_dn_qp.dosk provides the partial spectral function (PSF) in QP approximation
+for the k-points of high symmetry (spin down). First column in the file is real frequency
+(eV) measured from chemical potential.
+
+allfile_up_qp.dosk provides the partial spectral function (PSF) in QP approximation
+for the k-points of high symmetry (spin up). First column in the file is real frequency (eV)
+measured from chemical potential.
+
+allfile__qp_qp.eig provides the energies (eV) of band states in QP approximation
+relative to the chemical potential for all irreducible k-points.
+
+allfile(ATOM)___sum_qp.pdos provides the partial density of states (PDOS) in LDA
+approximation (atom ATOM). First column in the file is real frequency (eV) measured
+from chemical potential, columns 2-5 correspond to spdf-states of spin-down, columns 6-9
+correspond to spdf-states of spin-up. Different file is created for every symmetry-independent
+sort of atom.
+
+allfile_Im_sigc_w_band_k.qp provides the imaginary part of correlation self-energy as
+a function of Matsubara's frequency in QP approximation for the k-points of high symmetry
+(spin-down and spin-up). First column in the file is Matsubara's frequency (eV).
+
+allfile_Re_sigc_w_band_k.qp provides the real part of correlation self-energy as a
+function of Matsubara's frequency in QP approximation for the k-points of high symmetry
+(spin-down and spin-up). First column in the file is Matsubara's frequency (eV).
+10

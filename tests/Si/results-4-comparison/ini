@@ -1,0 +1,63 @@
+TEXT     *** band structure calculation of diamond Si  ***
+CONTROL   iter_dft= 14  iter_hf=  0  iter_gw=  0 iter_qp= 14
+          admix= 0.400  adspin= 0.700 adm_gw= 0.700 acc_it_gw= 0.800
+          iexch= 005 scal_spin= 1.0000
+          nproc_tau=  24 nproc_k=   2
+          irel= 0 clight= 274.074e+00 rel_interst= F irel_core= 0
+          temperature=   1600.00
+FILES
+  allfile= si
+SYM symgen= 'I:T(0.25,0.25,0.25)_R4Z:T(0.25,0.25,0.25)_R3D_'
+STRUCTURE  par= 10.2612200  natom=  4 nsort=  2  istruc=  3
+      is=  1  1  2  2
+      b_a= 1.000000  c_a= 1.000000
+      a=   0.0000000000000000   0.5000000000000000   0.5000000000000000
+      b=   0.5000000000000000   0.0000000000000000   0.5000000000000000
+      c=   0.5000000000000000   0.5000000000000000   0.0000000000000000
+    tau=   0.0000000000000000   0.0000000000000000   0.0000000000000000
+           0.2500000000000000   0.2500000000000000   0.2500000000000000
+           0.5000000000000000   0.5000000000000000   0.5000000000000000
+           0.7500000000000000   0.7500000000000000   0.7500000000000000
+REAL SPACE MESHES mdiv=  14  14  14
+                 nrdiv=  12  12  12
+BASIS  cut_lapw_ratio= 0.530 cut_pb_ratio= 0.830
+       eps_pb= 1.e-03
+ZONES nbndf=   0
+DOS   emindos= -0.300  emaxdos=  0.300   ndos= 1200
+      n_cont_frac=  28 e_small= 1.e-03
+K_POINT  ndiv=   4   4   4  metal= F n_k_div=  1 k_line= 001
+MULTI_SCF vv0=  1.00
+MAGNET  b_extval=   0.000000 iter_h_ext= 00000
+        b_ext=  0.000  0.000  1.000
+TAU MESH n_tau=   46 n_tau_int=  900
+OMEGA MESH n_omega_exa=   29 n_omega_asy=   18 omega_max=  200.00
+           interp_omega_d= 2   
+NU MESH n_nu_exa=   29 n_nu_asy=   18 nu_max=  200.00
+        interp_nu_d= 2
+ATOMIC DATE --------------------------------------------------------
+  txtel= Si    z= 14.0 magn_shift= 0.000
+  smt= 2.22000 h= 0.0200 nrad=  516 z_dop= 0.0000
+  lmb= 5  lmpb= 6
+  lim_pb_mt=  6  6  6  6  6  6  6
+  ntle=  3  3  1  1  1  1  1  1  1
+  l  augm  atocc   ptnl  corr idmd
+  0   LOC  2.000  2.950     N    0
+  0   APW  2.000  3.800     N    0
+  0   LOC  0.000  4.950     N    1
+  1   LOC  6.000  2.950     N    0
+  1   APW  2.000  3.800     N    0
+  1   LOC  0.000  4.950     N    1
+  2   APW  0.000  3.800     N    0
+  3   APW  0.000  4.800     N    0
+  4   APW  0.000  5.800     N    0
+  5   APW  0.000  6.800     N    0
+  txtel= Em    z=  0.0 magn_shift= 0.000
+  smt= 2.22000 h= 0.0200 nrad=  516 z_dop= 0.0000
+  lmb= 3  lmpb= 4
+  lim_pb_mt=  6  6  6  6  6  6  6
+  ntle=  1  1  1  1  1  1  1  1  1
+  l  augm  atocc   ptnl  corr idmd
+  0   APW  0.000  1.800     N    0
+  1   APW  0.000  2.800     N    0
+  2   APW  0.000  3.800     N    0
+  3   APW  0.000  4.800     N    0

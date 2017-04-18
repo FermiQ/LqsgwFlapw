@@ -1,0 +1,11 @@
+#COMPILER
+F90 = gfortran
+#PREPROCESSOR
+PREPROC = -cpp -DUNIX
+#COMPILATION FLAGS
+LDFLAG = -O3 
+#BLAS & LAPACK LIBS
+LIB =  -framework Accelerate # for new MAC OS X systems
+#LIB = -framework veclib     # for old MAC OS X systems
+#NAME
+PROG = LqsgwFlapw.exe

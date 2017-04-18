@@ -1,0 +1,10 @@
+#COMPILER
+F90 = /opt/mpich2/gnu/bin/mpif90 
+#PREPROCESSOR
+PREPROC = -cpp -DMPI -DUNIX
+#COMPILATION FLAGS
+LDFLAG = -O3
+#BLAS & LAPACK LIBS
+LIB = -L/usr/lib64 -llapack -lblas
+#NAME
+PROG = LqsgwFlapw.exe

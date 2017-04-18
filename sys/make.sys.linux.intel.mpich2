@@ -1,0 +1,10 @@
+#COMPILER
+F90 = /opt/mpich2/intel/14.0/bin/mpif90
+#PREPROCESSOR
+PREPROC = -fpp -DMPI -DFFTMKL -DUNIX
+#COMPILATION FLAGS
+LDFLAG = -O3
+#BLAS & LAPACK LIBS
+LIB = -i-static -mkl
+#NAME
+PROG = LqsgwFlapw.exe

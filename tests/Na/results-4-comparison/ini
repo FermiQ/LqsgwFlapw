@@ -1,0 +1,50 @@
+TEXT     *** band structure calculation of bcc Na  ***                          
+CONTROL   iter_dft=  9  iter_hf=  0  iter_gw=  0 iter_qp= 10
+          admix= 0.700  adspin= 0.700 adm_gw= 0.500 acc_it_gw= 0.700
+          iexch= 005 scal_spin= 1.0000
+          nproc_tau=  24 nproc_k=   2
+          irel= 0 clight= 274.074e+00 rel_interst= F irel_core= 0
+          temperature=   1000.00
+FILES                                                                           
+  allfile= na
+SYM symgen= 'I_R3D_R4Z_'
+STRUCTURE  par=  7.9593059  natom=  1 nsort=  1  istruc=  2
+      is=  1                                                                    
+      b_a= 1.000000  c_a= 1.000000
+      a=  -0.5000000000000000   0.5000000000000000   0.5000000000000000                     
+      b=   0.5000000000000000  -0.5000000000000000   0.5000000000000000                     
+      c=   0.5000000000000000   0.5000000000000000  -0.5000000000000000                     
+    tau=   0.0000000000000000   0.0000000000000000   0.0000000000000000
+REAL SPACE MESHES mdiv=  12  12  12
+                 nrdiv=  10  10  10  
+BASIS  cut_lapw_ratio= 0.500 cut_pb_ratio= 0.800
+       eps_pb= 1.e-03
+ZONES nbndf=   0
+DOS   emindos= -0.400  emaxdos=  0.400   ndos=  900
+      n_cont_frac=  28 e_small= 5.e-03
+K_POINT  ndiv=   6   6   6  metal= T n_k_div=  1 k_line= 011
+MULTI_SCF vv0=  1.000
+MAGNET  b_extval=   0.000000 iter_h_ext= 00000
+        b_ext=  0.000  0.000  1.000
+TAU MESH n_tau=   46 n_tau_int= 1000
+OMEGA MESH n_omega_exa=   29 n_omega_asy=   18 omega_max=  200.00
+           interp_omega_d= 2   
+NU MESH n_nu_exa=   29 n_nu_asy=   18 nu_max=  200.00
+        interp_nu_d= 2
+ATOMIC DATE --------------------------------------------------------            
+  txtel= Na    z= 11.0 magn_shift= 0.000
+  smt= 3.44000 h= 0.0150 nrad=  500 z_dop= 0.0000
+  lmb= 5  lmpb= 6
+  lim_pb_mt=  8  6  6  6  6  6  6  4  4                                               
+  ntle=  3  3  1  1  1  1  1  1  1                                              
+  l  augm  atocc   ptnl  corr idmd
+  0   LOC  2.000  2.950     N    0
+  0   APW  1.000  3.800     N    0
+  0   LOC  0.000  4.950     N    1
+  1   LOC  6.000  2.950     N    0                                               
+  1   APW  0.000  3.800     N    0
+  1   LOC  0.000  4.950     N    1
+  2   APW  0.000  3.800     N    0
+  3   APW  0.000  4.800     N    0
+  4   APW  0.000  5.800     N    0
+  5   APW  0.000  6.800     N    0

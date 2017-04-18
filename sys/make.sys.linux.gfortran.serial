@@ -1,0 +1,10 @@
+#COMPILER
+F90 = gfortran
+#PREPROCESSOR
+PREPROC = -cpp -DUNIX
+#COMPILATION FLAGS
+LDFLAG = -O3
+#BLAS & LAPACK LIBS
+LIB = -L/usr/lib64 -llapack -lblas
+#NAME
+PROG = LqsgwFlapw.exe
